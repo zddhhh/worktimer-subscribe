@@ -98,12 +98,12 @@ body {
 .page {
   position: relative;
   z-index: 1;
-  width: min(1080px, calc(100% - 40px));
+  width: min(920px, calc(100% - 40px));
   margin: 0 auto;
   padding: 56px 0 72px;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
   align-items: start;
 }
 @media (max-width: 860px) {
@@ -125,9 +125,9 @@ body {
   margin: 0;
   font-family: Syne, "Noto Sans SC", sans-serif;
   font-weight: 800;
-  font-size: clamp(52px, 10vw, 92px);
-  line-height: 0.88;
-  letter-spacing: -0.055em;
+  font-size: clamp(42px, 9vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   color: var(--ink);
 }
 .brand span {
@@ -138,10 +138,10 @@ body {
   color: transparent;
 }
 .sub {
-  margin: 18px 0 0;
-  font-size: clamp(20px, 3.2vw, 28px);
+  margin: 12px 0 0;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 .lead {
   margin: 18px 0 0;
@@ -366,26 +366,6 @@ button:disabled { opacity: 0.6; cursor: wait; }
   font: 500 14px/1.5 "Noto Sans SC", sans-serif;
   letter-spacing: 0;
 }
-.marks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 14px;
-}
-.marks div {
-  padding: 16px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.55);
-  backdrop-filter: blur(10px);
-}
-.marks strong {
-  display: block;
-  font-family: Syne, "Noto Sans SC", sans-serif;
-  font-size: 22px;
-  letter-spacing: -0.03em;
-}
-.marks span { color: var(--fog); font-size: 13px; }
 @media (max-width: 860px) {
   .aside { position: static; }
 }
@@ -461,16 +441,6 @@ button:disabled { opacity: 0.6; cursor: wait; }
       <p>下班倒计时，<br>一眼就清楚。</p>
       <span>WorkTimer 帮你盯着弹性工时，到点心里有数。</span>
     </blockquote>
-    <div class="marks">
-      <div>
-        <strong>两套安装包</strong>
-        <span>按系统分开下载</span>
-      </div>
-      <div>
-        <strong>应用内更新</strong>
-        <span>右键即可检查更新</span>
-      </div>
-    </div>
   </aside>
 </div>
 
