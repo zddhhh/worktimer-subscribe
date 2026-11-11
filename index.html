@@ -4,62 +4,315 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>下载 WorkTimer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-body { margin:0; font:16px/1.55 "Microsoft YaHei",sans-serif; background:#efe6d8; color:#3a241c; }
-main { max-width:440px; margin:28px auto; padding:22px 20px 26px; background:#fbf7f1; border-radius:16px; box-shadow:0 10px 30px rgba(58,36,28,.08); }
-h1 { font-size:22px; margin:4px 0 8px; }
-.brand { margin:0; font-size:13px; letter-spacing:.08em; color:#8c2f2f; }
-.ver { display:inline-block; margin:0 0 12px; padding:4px 10px; border-radius:999px; background:#f3e6d4; font-weight:bold; }
-.note { color:#6b5346; font-size:14px; margin:0 0 18px; }
-fieldset { margin:0 0 14px; padding:12px 12px 8px; border:1px solid #eadfce; border-radius:12px; }
-legend { padding:0 6px; font-size:13px; color:#6b5346; }
-label.choice { display:block; margin:0 0 6px; padding:8px 10px; border-radius:8px; background:#fff; }
-label.choice:has(input:checked) { background:#f8ebe3; outline:1px solid #e4c7b8; }
-input[type=email] { width:100%; box-sizing:border-box; font:16px sans-serif; padding:10px 12px; border:1px solid #eadfce; border-radius:8px; }
-button, .dl { display:block; width:100%; box-sizing:border-box; margin-top:6px; font:16px sans-serif; padding:12px 18px; background:#8c2f2f; color:#fff; border:0; border-radius:10px; text-align:center; text-decoration:none; }
-button.ghost, .ghost { background:#fff; color:#8c2f2f; outline:1px solid #e4c7b8; }
-button:disabled, .dl.off { opacity:.6; pointer-events:none; }
-.hint { margin:8px 2px 0; color:#6b5346; font-size:13px; }
-.split { margin:22px 0 10px; color:#8c6b5c; font-size:13px; text-align:center; }
-#out, #cancel { margin-top:16px; }
-#out h1, #cancel h1 { font-size:18px; }
+:root {
+  --ink: #14202b;
+  --muted: #5c6d7c;
+  --line: rgba(20, 32, 43, 0.12);
+  --panel: rgba(255, 255, 255, 0.72);
+  --accent: #0f766e;
+  --accent-deep: #0b5f59;
+  --glow: rgba(45, 158, 148, 0.28);
+  --warn: #b42318;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 16px/1.55 "Noto Sans SC", "Microsoft YaHei UI", sans-serif;
+  background:
+    radial-gradient(900px 480px at 12% -10%, rgba(56, 189, 175, 0.22), transparent 55%),
+    radial-gradient(700px 420px at 92% 8%, rgba(59, 130, 246, 0.16), transparent 50%),
+    linear-gradient(165deg, #e7eef6 0%, #f5f8fc 48%, #eef3f8 100%);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(20, 32, 43, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 32, 43, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 50% 20%, #000 20%, transparent 75%);
+}
+.wrap {
+  position: relative;
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+.hero {
+  position: relative;
+  padding: 8px 4px 28px;
+}
+.brand {
+  margin: 0;
+  font-family: Sora, "Noto Sans SC", sans-serif;
+  font-size: clamp(42px, 9vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.tag {
+  margin: 10px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+  font-weight: 500;
+}
+.lead {
+  margin: 18px 0 0;
+  max-width: 28em;
+  color: var(--muted);
+  font-size: 16px;
+}
+.ver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--accent-deep);
+  font-family: Sora, "Noto Sans SC", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+.ver::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--glow);
+}
+.arc {
+  position: absolute;
+  right: -4%;
+  top: -8px;
+  width: min(280px, 42vw);
+  height: min(280px, 42vw);
+  border-radius: 50%;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  background:
+    conic-gradient(from 210deg, transparent 0 62%, rgba(15, 118, 110, 0.35) 62% 68%, transparent 68% 100%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.55), transparent 62%);
+  mask-image: radial-gradient(circle, transparent 54%, #000 56%);
+  animation: spin 18s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.panel {
+  position: relative;
+  margin-top: 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(20, 32, 43, 0.06);
+}
+.panel h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.note {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.os {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+@media (max-width: 560px) {
+  .os { grid-template-columns: 1fr; }
+  .arc { opacity: 0.35; }
+}
+.os label {
+  display: block;
+  margin: 0;
+  padding: 14px 14px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.os label:has(input:checked) {
+  border-color: rgba(15, 118, 110, 0.55);
+  background: rgba(15, 118, 110, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.2);
+}
+.os input { accent-color: var(--accent); margin-right: 8px; }
+.os strong { display: block; font-size: 15px; margin-top: 2px; }
+.os span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+.dl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #149285, var(--accent-deep));
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-family: Sora, "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
+}
+.dl:hover { filter: brightness(1.04); }
+.dl.off { opacity: 0.55; pointer-events: none; box-shadow: none; }
+.hint { margin: 10px 2px 0; color: var(--muted); font-size: 13px; }
+.split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 28px 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.split::before, .split::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+}
+.mail {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.mail legend {
+  padding: 0;
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.mail + .mail { margin-top: 14px; }
+input[type=email] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.88);
+  font: 16px "Noto Sans SC", sans-serif;
+  color: var(--ink);
+}
+input[type=email]:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.28);
+  border-color: rgba(15, 118, 110, 0.45);
+}
+.modes {
+  display: grid;
+  gap: 8px;
+}
+.modes label {
+  display: block;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+.modes label:has(input:checked) {
+  border-color: rgba(15, 118, 110, 0.45);
+  background: rgba(15, 118, 110, 0.07);
+}
+.modes input { accent-color: var(--accent); margin-right: 8px; }
+button {
+  width: 100%;
+  margin-top: 14px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid rgba(15, 118, 110, 0.35);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.85);
+  color: var(--accent-deep);
+  font: 600 15px Sora, "Noto Sans SC", sans-serif;
+  cursor: pointer;
+}
+button:hover { background: #fff; }
+button:disabled { opacity: 0.6; cursor: wait; }
+#out, #cancel { margin-top: 18px; }
+#out h1, #cancel h1 { font-size: 18px; margin: 0 0 8px; }
+#out p, #cancel p { margin: 0; color: var(--muted); }
+.foot {
+  margin: 22px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
 </style>
 </head>
 <body>
-<main>
-<p class="brand">弹性下班计时器</p>
-<div id="signup">
-<h1>选系统，下载安装包</h1>
-<p class="ver" id="ver">最新版本：正在获取…</p>
-<p class="note">Windows 7 和 10 不是同一份安装包。先选自己的系统再下载。也可以填邮箱，把地址寄到手里。</p>
-<form id="f">
-<fieldset>
-<legend>系统</legend>
-<label class="choice"><input type="radio" name="os" value="main" checked> Windows 8.1、10、11</label>
-<label class="choice"><input type="radio" name="os" value="win7"> Windows 7、8</label>
-</fieldset>
-<a class="dl" id="dl" href="#">下载安装包</a>
-<p class="hint" id="dl-hint">点上面直接下载，不用登录。</p>
-<p class="split">或者用邮箱收链接</p>
-<fieldset>
-<legend>邮箱</legend>
-<input type="email" name="email" placeholder="name@example.com">
-</fieldset>
-<fieldset>
-<legend>寄送</legend>
-<label class="choice"><input type="radio" name="mode" value="once" checked> 只要这一版</label>
-<label class="choice"><input type="radio" name="mode" value="auto"> 以后每版都寄</label>
-</fieldset>
-<button type="submit" class="ghost">寄到邮箱</button>
-<p class="hint">发信邮箱 earoot@163.com</p>
-</form>
-<div id="out"></div>
+<div class="wrap">
+  <header class="hero">
+    <div class="arc" aria-hidden="true"></div>
+    <p class="brand">WorkTimer</p>
+    <p class="tag">弹性下班计时器</p>
+    <p class="lead">桌面倒计时小工具。装好就能用，检查更新走官方安装包。</p>
+    <p class="ver" id="ver">最新版本：正在获取…</p>
+  </header>
+
+  <section class="panel" id="signup">
+    <h1>选系统，下载安装包</h1>
+    <p class="note">Windows 7 和 10 不是同一份安装包。先选自己的系统再下载。也可以填邮箱，把地址寄到手里。</p>
+    <form id="f">
+      <div class="os" role="radiogroup" aria-label="系统">
+        <label class="choice">
+          <input type="radio" name="os" value="main" checked>
+          <strong>Windows 8.1 / 10 / 11</strong>
+          <span>WorkTimer-Setup.exe</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="os" value="win7">
+          <strong>Windows 7 / 8</strong>
+          <span>WorkTimer-Win7-Setup.exe</span>
+        </label>
+      </div>
+      <a class="dl" id="dl" href="#">下载安装包</a>
+      <p class="hint" id="dl-hint">点上面直接下载，不用登录。</p>
+
+      <p class="split">或者用邮箱收链接</p>
+      <fieldset class="mail">
+        <legend>邮箱</legend>
+        <input type="email" name="email" placeholder="name@example.com" autocomplete="email">
+      </fieldset>
+      <fieldset class="mail">
+        <legend>寄送</legend>
+        <div class="modes">
+          <label class="choice"><input type="radio" name="mode" value="once" checked> 只要这一版</label>
+          <label class="choice"><input type="radio" name="mode" value="auto"> 以后每版都寄</label>
+        </div>
+      </fieldset>
+      <button type="submit">寄到邮箱</button>
+      <p class="foot">发信邮箱 earoot@163.com</p>
+    </form>
+    <div id="out"></div>
+  </section>
+
+  <section class="panel" id="cancel" hidden>
+    <h1>取消长期订阅</h1>
+    <p id="cancel-text">正在取消…</p>
+  </section>
 </div>
-<div id="cancel" hidden>
-<h1>取消长期订阅</h1>
-<p id="cancel-text">正在取消…</p>
-</div>
-</main>
 <script>
 const API = "https://1407920495-4qprkfktiz.ap-guangzhou.tencentscf.com";
 const REPO = "https://gitcode.com/mdslanruo/work-timer/releases/download";
