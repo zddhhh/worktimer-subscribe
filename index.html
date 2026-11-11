@@ -98,16 +98,12 @@ body {
 .page {
   position: relative;
   z-index: 1;
-  width: min(920px, calc(100% - 40px));
+  width: min(720px, calc(100% - 40px));
   margin: 0 auto;
   padding: 56px 0 72px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
-  align-items: start;
 }
 @media (max-width: 860px) {
-  .page { grid-template-columns: 1fr; padding-top: 36px; }
+  .page { padding-top: 36px; }
   .clock { opacity: 0.35; width: 120vw; height: 120vw; right: -40vw; top: -20vw; }
 }
 
@@ -125,29 +121,25 @@ body {
   margin: 0;
   font-family: Syne, "Noto Sans SC", sans-serif;
   font-weight: 800;
-  font-size: clamp(42px, 9vw, 64px);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(36px, 8vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 .brand span {
-  display: block;
   background: linear-gradient(115deg, #10141c 0%, #163a38 48%, #c45a12 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.sub {
-  margin: 12px 0 0;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
 .lead {
-  margin: 18px 0 0;
-  max-width: 20em;
+  margin: 14px 0 0;
   color: var(--fog);
-  font-size: 17px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .lead { white-space: normal; }
 }
 .ver {
   display: inline-flex;
@@ -337,38 +329,6 @@ button:disabled { opacity: 0.6; cursor: wait; }
 #out h1, #cancel h1 { font-size: 18px; margin: 0 0 8px; }
 #out p, #cancel p { margin: 0; color: var(--fog); }
 #cancel.panel { margin-top: 0; }
-.aside {
-  position: sticky;
-  top: 28px;
-  align-self: start;
-}
-.quote {
-  margin: 0;
-  padding: 28px 26px;
-  border-radius: 28px;
-  background: rgba(16, 20, 28, 0.86);
-  color: #f4f1ea;
-  box-shadow: 0 30px 70px rgba(16, 20, 28, 0.22);
-  animation: rise 1s ease 0.12s both;
-}
-.quote p {
-  margin: 0;
-  font-family: Syne, "Noto Sans SC", sans-serif;
-  font-size: clamp(28px, 4vw, 40px);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-}
-.quote span {
-  display: block;
-  margin-top: 14px;
-  color: rgba(244, 241, 234, 0.62);
-  font: 500 14px/1.5 "Noto Sans SC", sans-serif;
-  letter-spacing: 0;
-}
-@media (max-width: 860px) {
-  .aside { position: static; }
-}
 </style>
 </head>
 <body>
@@ -384,8 +344,7 @@ button:disabled { opacity: 0.6; cursor: wait; }
     <header class="hero">
       <p class="kicker">Desktop timer</p>
       <h1 class="brand"><span>WorkTimer</span></h1>
-      <p class="sub">弹性下班计时器</p>
-      <p class="lead">桌面上的下班倒计时。下载安装，打开就能用。</p>
+      <p class="lead">弹性下班计时器，桌面倒计时，下载安装即可用。</p>
       <p class="ver"><i></i><span id="ver">正在获取版本…</span></p>
     </header>
 
@@ -435,13 +394,6 @@ button:disabled { opacity: 0.6; cursor: wait; }
       <p id="cancel-text">正在取消…</p>
     </section>
   </div>
-
-  <aside class="aside">
-    <blockquote class="quote">
-      <p>下班倒计时，<br>一眼就清楚。</p>
-      <span>WorkTimer 帮你盯着弹性工时，到点心里有数。</span>
-    </blockquote>
-  </aside>
 </div>
 
 <script>
