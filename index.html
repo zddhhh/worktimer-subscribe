@@ -404,48 +404,48 @@ button:disabled { opacity: 0.6; cursor: wait; }
 <div class="page">
   <div>
     <header class="hero">
-      <p class="kicker">Desktop timer</p>
+      <p class="kicker">桌面小工具</p>
       <h1 class="brand"><span>WorkTimer</span></h1>
       <p class="sub">弹性下班计时器</p>
-      <p class="lead">到点了就走。桌面倒计时，装好就能用。</p>
-      <p class="ver"><i></i><span id="ver">最新版本：正在获取…</span></p>
+      <p class="lead">还差多久能走？装上就能看，不用折腾设置。</p>
+      <p class="ver"><i></i><span id="ver">正在查最新版…</span></p>
     </header>
 
     <section class="panel" id="signup">
       <h1>选系统，下载安装包</h1>
-      <p class="note">Windows 7 和 10 不是同一份。先选系统，再下载。也可以把地址寄到邮箱。</p>
+      <p class="note">Win7 和 Win10 不是同一个文件，先认准自己的系统再下。懒得点下载的话，也可以发到邮箱。</p>
       <form id="f">
         <div class="os" role="radiogroup" aria-label="系统">
           <label>
             <input type="radio" name="os" value="main" checked>
-            <strong>Windows 8.1 / 10 / 11</strong>
+            <strong>我用 Windows 8.1 / 10 / 11</strong>
             <span>WorkTimer-Setup.exe</span>
           </label>
           <label>
             <input type="radio" name="os" value="win7">
-            <strong>Windows 7 / 8</strong>
+            <strong>我用 Windows 7 / 8</strong>
             <span>WorkTimer-Win7-Setup.exe</span>
           </label>
         </div>
         <a class="dl" id="dl" href="#">下载安装包</a>
-        <p class="hint" id="dl-hint">点上面直接下载，不用登录。</p>
+        <p class="hint" id="dl-hint">点一下就下，不用登录。</p>
 
         <details class="mail-panel">
-          <summary>或者用邮箱收链接</summary>
+          <summary>不想自己找？发到邮箱</summary>
           <div class="mail-body">
             <fieldset class="mail">
-              <legend>邮箱</legend>
+              <legend>你的邮箱</legend>
               <input type="email" name="email" placeholder="name@example.com" autocomplete="email">
             </fieldset>
             <fieldset class="mail">
-              <legend>寄送</legend>
+              <legend>怎么寄</legend>
               <div class="modes">
                 <label><input type="radio" name="mode" value="once" checked> 只要这一版</label>
                 <label><input type="radio" name="mode" value="auto"> 以后每版都寄</label>
               </div>
             </fieldset>
             <button type="submit">寄到邮箱</button>
-            <p class="foot">发信邮箱 earoot@163.com</p>
+            <p class="foot">信从 earoot@163.com 发出，偶尔会进垃圾箱。</p>
           </div>
         </details>
       </form>
@@ -454,23 +454,23 @@ button:disabled { opacity: 0.6; cursor: wait; }
 
     <section class="panel" id="cancel" hidden>
       <h1>取消长期订阅</h1>
-      <p id="cancel-text">正在取消…</p>
+      <p id="cancel-text">正在帮你取消…</p>
     </section>
   </div>
 
   <aside class="aside">
     <blockquote class="quote">
-      <p>下班这件事，<br>值得认真计时。</p>
-      <span>WorkTimer 只做一件事：帮你看清还要多久能走。</span>
+      <p>还差多久<br>能下班？</p>
+      <span>就干这一件事：把倒计时摆在桌面上，到点心里有数。</span>
     </blockquote>
     <div class="marks">
       <div>
-        <strong>两包</strong>
-        <span>Win7 / 新系统分开下</span>
+        <strong>别下错</strong>
+        <span>Win7 和新系统是两包</span>
       </div>
       <div>
-        <strong>OTA</strong>
-        <span>右键检查更新即可</span>
+        <strong>以后更新</strong>
+        <span>打开后右键就能查</span>
       </div>
     </div>
   </aside>
@@ -500,8 +500,8 @@ function refreshDownload() {
   const url = downloads[os] || "";
   dl.href = url || "#";
   dl.classList.toggle("off", !url);
-  dl.textContent = os === "win7" ? "下载 Windows 7 / 8 安装包" : "下载 Windows 8.1 / 10 / 11 安装包";
-  hint.textContent = url ? "点上面直接下载，不用登录。" : "下载地址还没取到，刷新再试，或改用邮箱。";
+  dl.textContent = os === "win7" ? "下载 Win7 / 8 安装包" : "下载 Win10 / 11 安装包";
+  hint.textContent = url ? "点一下就下，不用登录。" : "链接还没出来，刷一下页面，或者改用邮箱。";
 }
 
 function fallbackDownloads(version) {
@@ -527,7 +527,7 @@ fetch(API + "?meta=1").then((r) => r.text()).then((text) => {
     version = String((data.version || "")).trim();
     got = data.downloads || {};
   } catch (e) {}
-  ver.textContent = version ? ("最新版本：" + version) : "最新版本暂时取不到，刷新再看。";
+  ver.textContent = version ? ("现在是 " + version) : "版本号暂时看不着，刷一下再试。";
   const fb = fallbackDownloads(version);
   downloads = {
     main: String(got.main || fb.main || ""),
@@ -535,7 +535,7 @@ fetch(API + "?meta=1").then((r) => r.text()).then((text) => {
   };
   refreshDownload();
 }).catch(() => {
-  ver.textContent = "最新版本暂时取不到，刷新再看。";
+  ver.textContent = "版本号暂时看不着，刷一下再试。";
   refreshDownload();
 });
 refreshDownload();
@@ -563,7 +563,7 @@ if (cancelToken) {
       document.getElementById("cancel-text").textContent = text;
     })
     .catch(() => {
-      document.getElementById("cancel-text").textContent = "没取消成，过会儿再打开这个链接。";
+      document.getElementById("cancel-text").textContent = "这次没取消成，过会儿再点开这个链接试试。";
     });
 }
 
@@ -573,14 +573,14 @@ document.getElementById("f").addEventListener("submit", async (ev) => {
   const btn = ev.target.querySelector("button");
   const email = (ev.target.email.value || "").trim();
   if (!email) {
-    out.innerHTML = "<p>要寄到邮箱的话，先填邮箱。</p>";
+    out.innerHTML = "<p>邮箱还没填呢。</p>";
     const details = ev.target.querySelector("details");
     if (details) details.open = true;
     ev.target.email.focus();
     return;
   }
   btn.disabled = true;
-  out.innerHTML = "<p>正在寄，稍等。</p>";
+  out.innerHTML = "<p>正在发，稍等一下。</p>";
   const body = new URLSearchParams(new FormData(ev.target));
   try {
     const resp = await fetch(API, { method: "POST", body, headers: { "Content-Type": "application/x-www-form-urlencoded" } });
@@ -590,7 +590,7 @@ document.getElementById("f").addEventListener("submit", async (ev) => {
     const text = (doc.querySelector("p") || {}).textContent || html;
     showReply(out, title, text);
   } catch (e) {
-    out.innerHTML = "<p>没寄成，过会儿再试。</p>";
+    out.innerHTML = "<p>没发出去，过会儿再试一次。</p>";
   } finally {
     btn.disabled = false;
   }
