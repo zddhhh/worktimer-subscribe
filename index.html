@@ -31,29 +31,60 @@ body {
   margin: 0 auto;
   padding: 56px 0 64px;
 }
+.kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sea);
+}
 .brand {
   margin: 0;
   font-family: Syne, "Noto Sans SC", sans-serif;
-  font-size: clamp(40px, 10vw, 52px);
+  font-size: clamp(52px, 12vw, 72px);
   font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+}
+.brand span {
+  display: block;
+  background: linear-gradient(115deg, #12161c 0%, #163a38 48%, #c45a12 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .sub {
-  margin: 10px 0 0;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--sea);
+  margin: 14px 0 0;
+  font-size: clamp(18px, 3.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 .lead {
-  margin: 14px 0 0;
+  margin: 12px 0 0;
   color: var(--fog);
   font-size: 15px;
 }
 .ver {
-  margin: 16px 0 0;
-  color: var(--fog);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
   font-size: 13px;
+  font-weight: 600;
+}
+.ver::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sea);
+  box-shadow: 0 0 0 4px rgba(31, 111, 106, 0.14);
 }
 .panel {
   margin-top: 28px;
@@ -164,7 +195,8 @@ button:disabled { opacity: 0.6; cursor: wait; }
 </head>
 <body>
 <div class="wrap">
-  <h1 class="brand">WorkTimer</h1>
+  <p class="kicker">桌面小工具</p>
+  <h1 class="brand"><span>WorkTimer</span></h1>
   <p class="sub">弹性下班计时器</p>
   <p class="lead">还差多久能走？装上就能看。</p>
   <p class="ver" id="ver">正在查最新版…</p>
