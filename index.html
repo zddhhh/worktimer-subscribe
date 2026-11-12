@@ -194,37 +194,33 @@ body {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
-  margin-top: 28px;
+  gap: 8px 12px;
+  margin-top: 26px;
 }
 .meta-row .ver { margin-top: 0; }
 .meta-sep {
-  width: 1px;
-  height: 18px;
-  background: rgba(16, 20, 28, 0.14);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(16, 20, 28, 0.22);
   flex: 0 0 auto;
 }
 .dl-total {
   margin: 0;
   display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-  min-height: 28px;
+  align-items: center;
+  gap: 6px;
   color: var(--fog);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  line-height: 1.1;
+  font-family: "Instrument Sans", "Noto Sans SC", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 .dl-total strong {
-  color: var(--ink);
-  font-family: Syne, "Instrument Sans", "Noto Sans SC", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  color: var(--sea);
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  line-height: 1;
+  letter-spacing: 0.01em;
 }
 .scroll-hint {
   position: absolute;
@@ -465,7 +461,7 @@ button:disabled { opacity: 0.6; cursor: wait; }
     <div class="meta-row">
       <p class="ver"><i></i><span id="ver">读取版本…</span></p>
       <span class="meta-sep" id="dl-sep" hidden aria-hidden="true"></span>
-      <p class="dl-total" id="dl-total" hidden>累计 <strong></strong></p>
+      <p class="dl-total" id="dl-total" hidden>累计下载 <strong></strong></p>
     </div>
     <a class="scroll-hint" href="#download" aria-label="向下查看下载渠道">
       <span></span>
