@@ -191,24 +191,40 @@ body {
   padding: 2px 8px 2px 2px;
 }
 .meta-row {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 18px;
-  margin-top: 26px;
+  gap: 10px 14px;
+  margin-top: 28px;
 }
 .meta-row .ver { margin-top: 0; }
+.meta-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(16, 20, 28, 0.14);
+  flex: 0 0 auto;
+}
 .dl-total {
   margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-height: 28px;
   color: var(--fog);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
 }
 .dl-total strong {
   color: var(--ink);
-  font-weight: 700;
+  font-family: Syne, "Instrument Sans", "Noto Sans SC", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 .scroll-hint {
   position: absolute;
@@ -448,7 +464,8 @@ button:disabled { opacity: 0.6; cursor: wait; }
     <p class="lead">桌面倒计时，下载安装即可用。</p>
     <div class="meta-row">
       <p class="ver"><i></i><span id="ver">读取版本…</span></p>
-      <p class="dl-total" id="dl-total" hidden>累计下载 <strong></strong></p>
+      <span class="meta-sep" id="dl-sep" hidden aria-hidden="true"></span>
+      <p class="dl-total" id="dl-total" hidden>累计 <strong></strong></p>
     </div>
     <a class="scroll-hint" href="#download" aria-label="向下查看下载渠道">
       <span></span>
@@ -557,15 +574,19 @@ if (guessed === "win7") {
 const dlTotal = document.getElementById("dl-total");
 const STATS = "https://api.gitcode.com/api/v5/repos/mdslanruo/work-timer/download_statistics";
 
+const dlSep = document.getElementById("dl-sep");
+
 function showDownloadsTotal(n) {
   const total = Number(n) || 0;
   if (!dlTotal || total <= 0) {
     if (dlTotal) dlTotal.hidden = true;
+    if (dlSep) dlSep.hidden = true;
     return;
   }
   const strong = dlTotal.querySelector("strong");
   if (strong) strong.textContent = String(total);
   dlTotal.hidden = false;
+  if (dlSep) dlSep.hidden = false;
 }
 
 function parseDownloadsTotal(data) {
