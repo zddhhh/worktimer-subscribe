@@ -1,21 +1,21 @@
 {
-  "version": "1.4.48",
-  "tag": "v1.4.48",
-  "body": "WorkTimer 1.4.48\n\n- 久藏/最小化后贴条不再被计时器盖住\n\n# sha256(WorkTimer-Setup.exe): 7bd6d9dcd3d0544cabaf689525f373d3c999266ae7350b63fb9c30c35b2516e1\n# sha256(WorkTimer-Win7-Setup.exe): 99b53ddd14e7465b31e029a0b0b564a977cd384fb5d2d5571f0b268d478fa47f\n\n# sha256: 7bd6d9dcd3d0544cabaf689525f373d3c999266ae7350b63fb9c30c35b2516e1\n",
+  "version": "1.4.49",
+  "tag": "v1.4.49",
+  "body": "WorkTimer 1.4.49\n\n- 工时说明框换行不再裁字\n\n# sha256(WorkTimer-Setup.exe): 330d2a7f3224cd4fc2cf5da14aba1926958739b7b5ee0f64e5d847052e685e36\n# sha256(WorkTimer-Win7-Setup.exe): 35869a05d282294e7aebf4831696f72059164d7daf90662488e260a1357b239e\n\n# sha256: 330d2a7f3224cd4fc2cf5da14aba1926958739b7b5ee0f64e5d847052e685e36\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "7bd6d9dcd3d0544cabaf689525f373d3c999266ae7350b63fb9c30c35b2516e1",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.48/WorkTimer-Setup.exe"
+      "sha256": "330d2a7f3224cd4fc2cf5da14aba1926958739b7b5ee0f64e5d847052e685e36",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.49/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "99b53ddd14e7465b31e029a0b0b564a977cd384fb5d2d5571f0b268d478fa47f",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.48/WorkTimer-Win7-Setup.exe"
+      "sha256": "35869a05d282294e7aebf4831696f72059164d7daf90662488e260a1357b239e",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.49/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.48/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.48/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.49/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.49/WorkTimer-Win7-Setup.exe"
   }
 }
