@@ -1,21 +1,21 @@
 {
-  "version": "1.4.52",
-  "tag": "v1.4.52",
-  "body": "WorkTimer 1.4.52\n\n- 小游戏列表分组滚动，浏览器精选十款\n\n# sha256(WorkTimer-Setup.exe): 73904e9878cfa2f5502e3b17125228d424933b51ef617fe78d6e4bf4ff186d0d\n# sha256(WorkTimer-Win7-Setup.exe): c931e371ad3918f22f340e5f349fe917d9486ded96e53846c9d5fd3d07863087\n\n# sha256: 73904e9878cfa2f5502e3b17125228d424933b51ef617fe78d6e4bf4ff186d0d\n",
+  "version": "1.4.53",
+  "tag": "v1.4.53",
+  "body": "WorkTimer 1.4.53\n\n- 工时账本还在记时不再误提示早走\n\n# sha256(WorkTimer-Setup.exe): faf365aa18d7b0a448134da95aecfa069c5e7d76902206276916a3bdfc03b812\n# sha256(WorkTimer-Win7-Setup.exe): 835e7cf6d1112ff34a4a6a53127f8f5d1196ed47aebd6fb358ba9a816f1e3a0c\n\n# sha256: faf365aa18d7b0a448134da95aecfa069c5e7d76902206276916a3bdfc03b812\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "73904e9878cfa2f5502e3b17125228d424933b51ef617fe78d6e4bf4ff186d0d",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.52/WorkTimer-Setup.exe"
+      "sha256": "faf365aa18d7b0a448134da95aecfa069c5e7d76902206276916a3bdfc03b812",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.53/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "c931e371ad3918f22f340e5f349fe917d9486ded96e53846c9d5fd3d07863087",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.52/WorkTimer-Win7-Setup.exe"
+      "sha256": "835e7cf6d1112ff34a4a6a53127f8f5d1196ed47aebd6fb358ba9a816f1e3a0c",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.53/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.52/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.52/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.53/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.53/WorkTimer-Win7-Setup.exe"
   }
 }
