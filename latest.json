@@ -1,21 +1,21 @@
 {
-  "version": "1.4.55",
-  "tag": "v1.4.55",
-  "body": "WorkTimer 1.4.55\n\n- 修拔插电源/USB 时隐藏态易卡死\n\n# sha256(WorkTimer-Setup.exe): 582929a2b617c34f7d8eecf958f269d0ed8dcdf8b0ae21d07df6cb1f331f1e2e\n# sha256(WorkTimer-Win7-Setup.exe): 6847408870c24ac203ec869d52ae750c3a4fc03c982ff415a91256dd7bf5b588\n\n# sha256: 582929a2b617c34f7d8eecf958f269d0ed8dcdf8b0ae21d07df6cb1f331f1e2e\n",
+  "version": "1.4.56",
+  "tag": "v1.4.56",
+  "body": "WorkTimer 1.4.56\n\n- 工时账本键盘热力图去掉黄绿段，改成深蓝→靛紫→品红→珊瑚\n\n# sha256(WorkTimer-Setup.exe): 2c43d6acd0e911d8b7531d36b0d4b3b026ab891e8ace6ff4f7a10e3214e68e7f\n# sha256(WorkTimer-Win7-Setup.exe): ede41348ac835f44de91d6674f5bcb59e8b7797d9881fc18c77e4fbac7669824\n\n# sha256: 2c43d6acd0e911d8b7531d36b0d4b3b026ab891e8ace6ff4f7a10e3214e68e7f\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "582929a2b617c34f7d8eecf958f269d0ed8dcdf8b0ae21d07df6cb1f331f1e2e",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.55/WorkTimer-Setup.exe"
+      "sha256": "2c43d6acd0e911d8b7531d36b0d4b3b026ab891e8ace6ff4f7a10e3214e68e7f",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.56/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "6847408870c24ac203ec869d52ae750c3a4fc03c982ff415a91256dd7bf5b588",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.55/WorkTimer-Win7-Setup.exe"
+      "sha256": "ede41348ac835f44de91d6674f5bcb59e8b7797d9881fc18c77e4fbac7669824",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.56/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.55/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.55/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.56/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.56/WorkTimer-Win7-Setup.exe"
   }
 }
