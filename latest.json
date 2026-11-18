@@ -1,21 +1,21 @@
 {
-  "version": "1.4.57",
-  "tag": "v1.4.57",
-  "body": "WorkTimer 1.4.57\n\n- 计时器顶栏可勾「精确次数」：过万显示完整数字，默认仍缩成「万」\n\n# sha256(WorkTimer-Setup.exe): 79ddede9a501c5c999ddc7eb7128b1d8048797281d973343785eb12008f8e4b2\n# sha256(WorkTimer-Win7-Setup.exe): 6454ac92a6cc8e5362844ee9a7eb4217d8b9e05535e6b33469a792d333d3ed39\n\n# sha256: 79ddede9a501c5c999ddc7eb7128b1d8048797281d973343785eb12008f8e4b2\n",
+  "version": "1.4.58",
+  "tag": "v1.4.58",
+  "body": "WorkTimer 1.4.58\n\n- 保留天数增加「永久」；缩短会删数据时先确认，并减轻连点卡顿\n\n# sha256(WorkTimer-Setup.exe): 3fe6f6aaaee5015e5fa298020a6148632707bd740173a6b2ae3bc02122fdb073\n# sha256(WorkTimer-Win7-Setup.exe): a43bc00d391370266e4b9a9ffc848f8309b443a858576545f4c2ce952d3321cb\n\n# sha256: 3fe6f6aaaee5015e5fa298020a6148632707bd740173a6b2ae3bc02122fdb073\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "79ddede9a501c5c999ddc7eb7128b1d8048797281d973343785eb12008f8e4b2",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.57/WorkTimer-Setup.exe"
+      "sha256": "3fe6f6aaaee5015e5fa298020a6148632707bd740173a6b2ae3bc02122fdb073",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.58/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "6454ac92a6cc8e5362844ee9a7eb4217d8b9e05535e6b33469a792d333d3ed39",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.57/WorkTimer-Win7-Setup.exe"
+      "sha256": "a43bc00d391370266e4b9a9ffc848f8309b443a858576545f4c2ce952d3321cb",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.58/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.57/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.57/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.58/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.58/WorkTimer-Win7-Setup.exe"
   }
 }
