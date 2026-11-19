@@ -1,21 +1,21 @@
 {
-  "version": "1.4.60",
-  "tag": "v1.4.60",
-  "body": "WorkTimer 1.4.60\n\n- 异常退出后询问是否上报诊断到仓库 Issue（需同意，每天最多一次）\n- 切皮肤写入诊断痕迹，便于对照偶发卡死\n\n# sha256(WorkTimer-Setup.exe): 5f68ee99e0b2a540d4764b05a6340855794f827f0dc50637f2841806b31a7e23\n# sha256(WorkTimer-Win7-Setup.exe): ec0e0db894bbf4213cda53235ca6292667bbc9c8f9b1135438b1d0f229703d06\n\n# sha256: 5f68ee99e0b2a540d4764b05a6340855794f827f0dc50637f2841806b31a7e23\n",
+  "version": "1.4.61",
+  "tag": "v1.4.61",
+  "body": "WorkTimer 1.4.61\n\n- 修诊断上报：当天再次异常退出仍会询问，不再吞掉记录\n- 每次异常退出都会在本机留下 diag_last.json\n\n# sha256(WorkTimer-Setup.exe): 2dec1c38e105de561f6d2bc6435c0b8c4916267951be5e43645217bc04a55801\n# sha256(WorkTimer-Win7-Setup.exe): 96f5bec45b2521bd049836f348985c3732e48393db1ef45ec2803a938432d467\n\n# sha256: 2dec1c38e105de561f6d2bc6435c0b8c4916267951be5e43645217bc04a55801\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "5f68ee99e0b2a540d4764b05a6340855794f827f0dc50637f2841806b31a7e23",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.60/WorkTimer-Setup.exe"
+      "sha256": "2dec1c38e105de561f6d2bc6435c0b8c4916267951be5e43645217bc04a55801",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.61/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "ec0e0db894bbf4213cda53235ca6292667bbc9c8f9b1135438b1d0f229703d06",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.60/WorkTimer-Win7-Setup.exe"
+      "sha256": "96f5bec45b2521bd049836f348985c3732e48393db1ef45ec2803a938432d467",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.61/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.60/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.60/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.61/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.61/WorkTimer-Win7-Setup.exe"
   }
 }
