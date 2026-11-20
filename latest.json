@@ -1,21 +1,21 @@
 {
-  "version": "1.4.64",
-  "tag": "v1.4.64",
-  "body": "WorkTimer 1.4.64\n\n- 修热更新后误弹诊断上报：更新退出会正常收尾\n- 刚更新唤起时不再把安装结束旧进程当成崩溃\n\n# sha256(WorkTimer-Setup.exe): dc20cec351d730526e4cf296885805ec2f432c47971e26341e1af497e2b1d9de\n# sha256(WorkTimer-Win7-Setup.exe): e3b1b8d8f64cb5428f8d3cec3993bf16dd679e2b861321f6593d9889c0b3c578\n\n# sha256: dc20cec351d730526e4cf296885805ec2f432c47971e26341e1af497e2b1d9de\n",
+  "version": "1.4.65",
+  "tag": "v1.4.65",
+  "body": "WorkTimer 1.4.65\n\n- 诊断少打扰：关机与刚杀的空转进程不再追问上报\n- 心跳停约 15 分钟以上仍会问，方便抓挂久假死\n\n# sha256(WorkTimer-Setup.exe): d9dae875e0b987ab7a8694610bdec9a87f9d1210925035e49fd38549aab42541\n# sha256(WorkTimer-Win7-Setup.exe): acaddffa7c7c5d48ee9b696c590ef584d0bde48f42d5dae6e471ca5f84a8a3a5\n\n# sha256: d9dae875e0b987ab7a8694610bdec9a87f9d1210925035e49fd38549aab42541\n",
   "assets": [
     {
       "name": "WorkTimer-Setup.exe",
-      "sha256": "dc20cec351d730526e4cf296885805ec2f432c47971e26341e1af497e2b1d9de",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.64/WorkTimer-Setup.exe"
+      "sha256": "d9dae875e0b987ab7a8694610bdec9a87f9d1210925035e49fd38549aab42541",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.65/WorkTimer-Setup.exe"
     },
     {
       "name": "WorkTimer-Win7-Setup.exe",
-      "sha256": "e3b1b8d8f64cb5428f8d3cec3993bf16dd679e2b861321f6593d9889c0b3c578",
-      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.64/WorkTimer-Win7-Setup.exe"
+      "sha256": "acaddffa7c7c5d48ee9b696c590ef584d0bde48f42d5dae6e471ca5f84a8a3a5",
+      "url": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.65/WorkTimer-Win7-Setup.exe"
     }
   ],
   "downloads": {
-    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.64/WorkTimer-Setup.exe",
-    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.64/WorkTimer-Win7-Setup.exe"
+    "main": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.65/WorkTimer-Setup.exe",
+    "win7": "https://gitcode.com/mdslanruo/work-timer/releases/download/v1.4.65/WorkTimer-Win7-Setup.exe"
   }
 }
